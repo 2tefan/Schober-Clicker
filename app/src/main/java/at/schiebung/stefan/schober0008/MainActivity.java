@@ -36,14 +36,12 @@ import static at.schiebung.stefan.schober0008.Vars.RC_SIGN_IN;
 import static at.schiebung.stefan.schober0008.Vars.handler;
 
 public class MainActivity extends AppCompatActivity
-{   //Hi
-
+{
     GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
                                                                                                   .build();
     public static void Refresh(TextView ClicksCounter)
     {
         ClicksCounter.setText(Upgrades.format(Vars.Clicks));
-        System.out.println("sfda");
     }
 
     @Override
