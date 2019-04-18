@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1012549104826",
+    "firebase_url": "https://schober-clicker-4382a.firebaseio.com",
+    "project_id": "schober-clicker-4382a",
+    "storage_bucket": "schober-clicker-4382a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012549104826:android:74fe09baa5847135",
+        "android_client_info": {
+          "package_name": "at.schiebung.stefan.schober0008"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012549104826-qhp6p23bj963cbhdnsdo6grq0i5o3r9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "at.schiebung.stefan.schober0008",
+            "certificate_hash": "55737f5bbe2656b310d5381a957b416db01b6b2e"
+          }
+        },
+        {
+          "client_id": "1012549104826-6nrk4laea0j61d922uctopmlah95157p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIRyuAjWZ-DAdEAfKLsv29gEkOp_GPTTE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012549104826-6nrk4laea0j61d922uctopmlah95157p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

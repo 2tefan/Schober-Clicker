@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/preference_title">
+
+	<PreferenceCategory android:title="@string/preference_category">
+		<CheckBoxPreference
+			android:defaultValue="false"
+			android:icon="@drawable/ic_outline_watch_24px"
+			android:key="@string/preference_lpwd_key"
+			android:summary="@string/preference_lpwd_summary"
+			android:title="@string/preference_lpwd_title"
+			android:visibility="visible" />
+
+		<CheckBoxPreference
+			android:defaultValue="true"
+			android:icon="@drawable/ic_outline_music_note_24px"
+			android:key="@string/preference_music_key"
+			android:summary="@string/preference_music_summary"
+			android:title="@string/preference_music_title"
+			android:visibility="visible" />
+
+		<Preference
+			android:icon="@drawable/ic_info_black_24dp"
+			android:key="@string/preference_info_key"
+			android:summary="@string/preference_info_summary"
+			android:title="@string/preference_info_title">
+			<intent
+				android:targetClass="at.schiebung.stefan.schober0008.InfoActivity"
+				android:targetPackage="at.schiebung.stefan.schober0008" />
+		</Preference>
+
+		<Preference
+			android:icon="@drawable/ic_outline_textsms_24px"
+			android:key="@string/preference_pp_key"
+			android:summary="@string/preference_pp_summary"
+			android:title="@string/preference_pp_title">
+			<intent
+				android:action="android.intent.action.VIEW"
+				android:data="@string/ppUrlSchober" />
+		</Preference>
+	</PreferenceCategory>
+
+</PreferenceScreen>

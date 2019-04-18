@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#011f4b</color>
+    <color name="colorPrimaryDark">#03396c</color>
+    <color name="colorAccent">#40a2ff</color>
+
+	<color name="mainColor">#40a2ff</color>
+	<color name="mainTextColor">#000000</color>
+
+    <color name="backgroundPrimary">#00005b96</color>
+	<color name="buttonPrimary">#6497b1</color>
+	<color name="buttonSecondary">#b3cde0</color>
+
+	<!--SchoberPfeil-->
+	<color name="schoberpfeil">#f6cd61</color>
+	<color name="schoberpfeiloutline">#fe8a71</color>
+
+	<!--Background-->
+	<color name="bg_color1">#005b96</color>
+	<color name="bg_color2">#96005b</color>
+	<color name="bg_color3">#5b9600</color>
+	<color name="bg_color4">#005b96</color>
+
+	<!--Buttons-->
+	<color name="btn_color1">#ffffff</color>
+	<color name="btn_color2">#ffffff</color>
+
+	<!--Popup-->
+	<color name="popup_color1">#64ffffff</color>
+	<color name="popup_color2">#64757575</color>
+
+	<!--TextView-->
+	<color name="textview_color1">#212121</color>
+</resources>

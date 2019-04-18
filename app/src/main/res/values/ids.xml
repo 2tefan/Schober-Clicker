@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/games-ids.xml in your project.
+-->
+<resources>
+	<!-- app_id -->
+	<string name="app_id" translatable="false">432912199591</string>
+	<!-- package_name -->
+	<string name="package_name" translatable="false">at.schiebung.stefan.schober0008</string>
+	<!-- achievement 1 Scober -->
+	<string name="achievement_first_schober" translatable="false">CgkIp9_P3MwMEAIQAw</string>
+	<!-- achievement Bimbo -->
+	<string name="achievement_bimbo" translatable="false">CgkIp9_P3MwMEAIQBA</string>
+	<!-- achievement KiloSchober -->
+	<string name="achievement_kiloschober" translatable="false">CgkIp9_P3MwMEAIQAQ</string>
+	<!-- pushStats Clicks -->
+	<string name="leaderboard_clicks" translatable="false">CgkIp9_P3MwMEAIQAg</string>
+</resources>
