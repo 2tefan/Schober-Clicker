@@ -88,9 +88,7 @@ public class MainActivity extends AppCompatActivity
         super.onResume();
 
         TextView ClicksCounter = this.findViewById(R.id.ClicksCounter);
-
         Refresh(ClicksCounter);
-
         Sounds.MusicResume();
 
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pfc_lpd", false))
