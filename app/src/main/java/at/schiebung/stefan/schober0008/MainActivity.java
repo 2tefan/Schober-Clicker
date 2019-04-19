@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity
 {
     GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
                                                                                                   .build();
+
+    //Hello, this is a little test ;)
     public static void Refresh(TextView ClicksCounter)
     {
         ClicksCounter.setText(Upgrades.format(Vars.Clicks));
