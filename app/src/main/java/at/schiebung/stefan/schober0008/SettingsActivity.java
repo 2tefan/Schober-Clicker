@@ -24,7 +24,7 @@ public class SettingsActivity extends AppCompatActivity
 			Vars.bm = android.preference.PreferenceManager.getDefaultSharedPreferences(this)
 														  .getBoolean("pfc_music", true);
 			Sounds.MusicKill();
-			Sounds.MusicCreate(Vars.main);
+			Sounds.MusicCreate(this);
 			Sounds.MusicResume();
 		}
 	}

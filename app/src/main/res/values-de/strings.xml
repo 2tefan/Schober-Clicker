@@ -2,9 +2,7 @@
 	<string name="app_name">Schober Clicker</string>
 
 	<!--Settings-->
-	<string name="action_settings">Einstellungen</string>
 	<string name="title_activity_settings">Einstellungen</string>
-	<string name="action_daten_refresh">Einstellungen</string>
 
 	<!--Preference-->
 	<string name="preference_title">Einstellungen</string>
@@ -21,29 +19,19 @@
 
 
 	<!--Buttons-->
-	<string name="action_info">Info</string>
 	<string name="title_activity_info">Info</string>
-	<string name="title_activity_upgrades">Upgrades</string>
 
 	<!--Credits-->
 
 	<!--Buttons on Info-->
-	<string name="btn_music_on_off">Musik</string>
-	<string name="signin_other_error">Ein Fehler ist aufgetreten</string>
+    <string name="signin_other_error">Ein Fehler ist aufgetreten</string>
 	<string name="not_logged_in" >Du bist nicht eingeloggt!</string>
-
-	<string name="btn_music_on" >Musik ist ein!</string>
-	<string name="btn_music_off" >Musik ist aus!</string>
 
 	<string name="btn_not_loggedin">Du bist nicht angemeldet!</string>
 	<string name="btn_loggedin">Du bist angemeldet!</string>
 
-	<string name="btn_privacy_policy">Allgemeine Geschäftsbedingungen</string>
 
-
-	<!--Wieviel felht-->
-	<string name="dif1">Du brauchst</string>
-	<string name="dif2">mehr</string>
+    <!--Wieviel felht-->
 
 	<!--UpgradeButtons-->
 	<string name="upgradeTitel">Upgrades</string>
@@ -52,20 +40,16 @@
 	<string name="upgrade3" >Kleiner Schober</string>
 
 	<!--Buttons on Main-->
-	<string name="achievement_btn">Erfolge</string>
-	<string name="leaderboard">Rangliste</string>
 
 	<!--Background-->
 	<integer name="duration">4500</integer>
 
 	<!--NavBar-->
-	<integer name="navbar">0</integer>
 
 	<!--Content Description-->
 	<string name="cd_settings_icon">Einstellungs Icon</string>
 	<string name="cd_schoberPfeilL">Schoberpfeil Links</string>
 	<string name="cd_schoberPfeilR">Schoberpfeil Rechts</string>
-	<string name="cd_achievments">Icon von den Achievement</string>
 	<string name="cd_leaderboard">Icon von der Rangliste</string>
 
 </resources>

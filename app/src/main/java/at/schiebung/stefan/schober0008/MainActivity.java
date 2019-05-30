@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
@@ -35,12 +34,12 @@ import static at.schiebung.stefan.schober0008.Vars.RC_LEADERBOARD_UI;
 import static at.schiebung.stefan.schober0008.Vars.RC_SIGN_IN;
 import static at.schiebung.stefan.schober0008.Vars.handler;
 
+@SuppressWarnings("IntegerDivisionInFloatingPointContext")
 public class MainActivity extends AppCompatActivity
 {
-    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
-                                                                                                  .build();
+    private final GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
-    public static void Refresh(TextView ClicksCounter)
+    private static void Refresh(TextView ClicksCounter)
     {
         ClicksCounter.setText(Upgrades.format(Vars.Clicks));
     }
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Vars.Werte();
-        Vars.main = this;
         Saves.loadSaves(this);
         startTimer();
         Sounds.MusicCreate(this);
@@ -61,16 +59,14 @@ public class MainActivity extends AppCompatActivity
         refreshUpgrades();
     }
 
-    public void setWindow()
+    private void setWindow()
     {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
-        TextViewCompat.setAutoSizeTextTypeWithDefaults((TextView) findViewById(R.id.txtUpgrades),
-                                                       TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults((TextView) findViewById(R.id.txtUpgrades), TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
 
-        TextViewCompat.setAutoSizeTextTypeWithDefaults((TextView) findViewById(R.id.ClicksCounter),
-                                                       TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults((TextView) findViewById(R.id.ClicksCounter), TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
     }
 
     @Override
@@ -164,7 +160,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void lookingFor()
+    private void lookingFor()
     {
         vorsilbe();
 
@@ -174,40 +170,29 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void pushStats()
+    private void pushStats()
     {
-        Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
-             .submitScore(getString(R.string.leaderboard_clicks), (long) (Vars.Clicks * 100));
+        Games.getLeaderboardsClient(this, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this))).submitScore(getString(R.string.leaderboard_clicks), (long) (Vars.Clicks * 100));
 
 
         if (Vars.Clicks >= 1)
         {
-            Games.getAchievementsClient(this,
-                                        Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(
-                                                this)))
-                 .unlock(getString(R.string.achievement_first_schober));
+            Games.getAchievementsClient(this, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this))).unlock(getString(R.string.achievement_first_schober));
         }
         if (Vars.Clicks >= 5)
         {
-            Games.getAchievementsClient(this,
-                                        Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(
-                                                this)))
-                 .unlock(getString(R.string.achievement_bimbo));
+            Games.getAchievementsClient(this, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this))).unlock(getString(R.string.achievement_bimbo));
         }
 
         if (Vars.Clicks >= 1000)
         {
-            Games.getAchievementsClient(this,
-                                        Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(
-                                                this)))
-                 .unlock(getString(R.string.achievement_kiloschober));
+            Games.getAchievementsClient(this, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this))).unlock(getString(R.string.achievement_kiloschober));
         }
     }
 
-    public void vorsilbe()
+    private void vorsilbe()
     {
-        while ((Vars.Clicks >= (Math.pow(1000,
-                                         (double) Vars.vorsilbe + 1))) && Vars.vorsilbe < Vars.sivorsilben.length - 1)
+        while ((Vars.Clicks >= (Math.pow(1000, (double) Vars.vorsilbe + 1))) && Vars.vorsilbe < Vars.sivorsilben.length - 1)
         {
             Vars.vorsilbe++;
         }
@@ -225,7 +210,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void startTimer()
+    private void startTimer()
     {
         //set a new Vars.timer
         Vars.timer = new Timer();
@@ -238,7 +223,7 @@ public class MainActivity extends AppCompatActivity
         Vars.timer.schedule(Vars.timerTaskChanges, 10, 10000);
     }
 
-    public void initializeTimerTask()
+    private void initializeTimerTask()
     {
         Vars.timerTaskAuto = new java.util.TimerTask()
         {
@@ -280,7 +265,7 @@ public class MainActivity extends AppCompatActivity
         upgradesMethode();
     }
 
-    public void upgradesMethode()
+    private void upgradesMethode()
     {
         boolean b = false;
 
@@ -322,10 +307,10 @@ public class MainActivity extends AppCompatActivity
             x = 2;
         }
 
-        Upgrades.Upgrades(x, context, txtUpgradeCost);
+        Upgrades.Upgrade(x, context, txtUpgradeCost);
     }
 
-    public void refreshUpgrades()
+    private void refreshUpgrades()
     {
         TextView txtUpgradeCost1 = this.findViewById(R.id.txtUpgradeCost1);
         TextView txtUpgradeCost2 = this.findViewById(R.id.txtUpgradeCost2);
@@ -335,7 +320,7 @@ public class MainActivity extends AppCompatActivity
         //
         //		for (int i = 0; i < Vars.UpgradeCost.length; i++)
         //		{
-        //			temp[i] = Upgrades.round(temp[i], 2);
+        //			temp[i] = Upgrade.round(temp[i], 2);
         //		}
 
         txtUpgradeCost1.setText(Upgrades.format(Vars.UpgradeCost[0]));
@@ -347,7 +332,7 @@ public class MainActivity extends AppCompatActivity
         schoberpersecound.setText(Upgrades.formatsps(sps));
     }
 
-    public void pfeilAnimator(boolean backwards)
+    private void pfeilAnimator(boolean backwards)
     {
         if (!Vars.rotated)
         {
@@ -358,17 +343,11 @@ public class MainActivity extends AppCompatActivity
 
             if (!backwards)
             {
-                animL = new RotateAnimation(180f,
-                                            360f,
-                                            schoberPfeilL.getHeight() / 2,
-                                            schoberPfeilL.getWidth() / 2);
+                animL = new RotateAnimation(180f, 360f, schoberPfeilL.getHeight() / 2, schoberPfeilL.getWidth() / 2);
                 animL.setInterpolator(new AnticipateOvershootInterpolator());
                 animL.setDuration(Vars.pfeilRotateDuration);
 
-                animR = new RotateAnimation(-180f,
-                                            -360f,
-                                            schoberPfeilR.getHeight() / 2,
-                                            schoberPfeilR.getWidth() / 2);
+                animR = new RotateAnimation(-180f, -360f, schoberPfeilR.getHeight() / 2, schoberPfeilR.getWidth() / 2);
                 animR.setInterpolator(new AnticipateOvershootInterpolator());
                 animR.setDuration(Vars.pfeilRotateDuration);
 
@@ -384,17 +363,11 @@ public class MainActivity extends AppCompatActivity
             }
             else
             {
-                animL = new RotateAnimation(180,
-                                            0,
-                                            schoberPfeilL.getHeight() / 2,
-                                            schoberPfeilL.getWidth() / 2);
+                animL = new RotateAnimation(180, 0, schoberPfeilL.getHeight() / 2, schoberPfeilL.getWidth() / 2);
                 animL.setInterpolator(new AnticipateOvershootInterpolator());
                 animL.setDuration(Vars.pfeilRotateDuration);
 
-                animR = new RotateAnimation(-180,
-                                            0,
-                                            schoberPfeilR.getHeight() / 2,
-                                            schoberPfeilR.getWidth() / 2);
+                animR = new RotateAnimation(-180, 0, schoberPfeilR.getHeight() / 2, schoberPfeilR.getWidth() / 2);
                 animR.setInterpolator(new AnticipateOvershootInterpolator());
                 animR.setDuration(Vars.pfeilRotateDuration);
 
@@ -412,7 +385,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void upgradeAnimator(boolean backwards)
+    private void upgradeAnimator(boolean backwards)
     {
         ConstraintLayout upgradeArea = findViewById(R.id.upgradeArea);
         ObjectAnimator   areaani;
@@ -459,7 +432,7 @@ public class MainActivity extends AppCompatActivity
         Vars.popupDuration = temp;
     }
 
-    public void animations()
+    private void animations()
     {
         ConstraintLayout  myLayout          = findViewById(R.id.myLayout);           //Hintergrund
         AnimationDrawable animationDrawable = (AnimationDrawable) myLayout.getBackground();
@@ -484,22 +457,20 @@ public class MainActivity extends AppCompatActivity
         if (requestCode == RC_SIGN_IN)
         {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if (result.isSuccess())
-            {
-                // The signed in account is stored in the result.
-                GoogleSignInAccount signedInAccount = result.getSignInAccount();
-            }
-            else
+            if (!result.isSuccess())
             {
                 String message = result.getStatus().getStatusMessage();
                 if (message == null || message.isEmpty())
                 {
                     message = getString(R.string.signin_other_error);
                 }
-                new AlertDialog.Builder(this).setMessage(message)
-                                             .setNeutralButton(android.R.string.ok, null)
-                                             .show();
+                new AlertDialog.Builder(this).setMessage(message).setNeutralButton(android.R.string.ok, null).show();
             }
+            //            else
+            //            {
+            //                // The signed in account is stored in the result.
+            //                //  GoogleSignInAccount signedInAccount = result.getSignInAccount();
+            //            }
         }
     }
 
@@ -507,23 +478,19 @@ public class MainActivity extends AppCompatActivity
     {
         if (isSignedIn())
         {
-            Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
-                 .getAchievementsIntent()
-                 .addOnSuccessListener(new OnSuccessListener<Intent>()
-                 {
-                     @Override
-                     public void onSuccess(Intent intent)
-                     {
-                         startActivityForResult(intent, Vars.RC_ACHIEVEMENT_UI);
-                     }
-                 });
+            Games.getAchievementsClient(this, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this))).getAchievementsIntent().addOnSuccessListener(new OnSuccessListener<Intent>()
+            {
+                @Override
+                public void onSuccess(Intent intent)
+                {
+                    startActivityForResult(intent, Vars.RC_ACHIEVEMENT_UI);
+                }
+            });
         }
         else
         {
             String message = getResources().getString(R.string.not_logged_in);
-            new android.app.AlertDialog.Builder(this).setMessage(message)
-                                                     .setNeutralButton(android.R.string.ok, null)
-                                                     .show();
+            new android.app.AlertDialog.Builder(this).setMessage(message).setNeutralButton(android.R.string.ok, null).show();
         }
     }
 
@@ -531,7 +498,7 @@ public class MainActivity extends AppCompatActivity
     {
         if (isSignedIn())
         {
-            Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
+            Games.getLeaderboardsClient(this, Objects.requireNonNull(GoogleSignIn.getLastSignedInAccount(this)))
                  .getLeaderboardIntent(getString(R.string.leaderboard_clicks))
                  .addOnSuccessListener(new OnSuccessListener<Intent>()
                  {
@@ -546,9 +513,7 @@ public class MainActivity extends AppCompatActivity
         {
 
             String message = getResources().getString(R.string.not_logged_in);
-            new android.app.AlertDialog.Builder(this).setMessage(message)
-                                                     .setNeutralButton(android.R.string.ok, null)
-                                                     .show();
+            new android.app.AlertDialog.Builder(this).setMessage(message).setNeutralButton(android.R.string.ok, null).show();
         }
     }
 
@@ -565,9 +530,8 @@ public class MainActivity extends AppCompatActivity
 
     private void startSignInIntent()
     {
-        GoogleSignInClient signInClient = GoogleSignIn.getClient(this,
-                                                                 GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
-        Intent intent = signInClient.getSignInIntent();
+        GoogleSignInClient signInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
+        Intent             intent       = signInClient.getSignInIntent();
         startActivityForResult(intent, RC_SIGN_IN);
     }
 

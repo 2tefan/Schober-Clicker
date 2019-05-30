@@ -6,17 +6,14 @@ import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 /**
  * Created by Stefan on 22.05.2018.
  */
 
-public class Upgrades
+class Upgrades
 {
 
-	public static void Upgrades(int x, Context context, TextView txtUpgradeCost)
+	public static void Upgrade(int x, Context context, TextView txtUpgradeCost)
 	{
 		if (Vars.Clicks >= Vars.UpgradeCost[x])
 		{
@@ -43,11 +40,11 @@ public class Upgrades
 		}
 		else
 		{
-			Upgrades.toast(x, context, txtUpgradeCost);
+			Upgrades.toast(context, txtUpgradeCost);
 		}
 	}
 
-	public static void toast(int x, final Context context, final TextView txtUpgradeCost)
+	private static void toast(final Context context, final TextView txtUpgradeCost)
 	{
 		txtUpgradeCost.setTextColor(Color.RED);
 

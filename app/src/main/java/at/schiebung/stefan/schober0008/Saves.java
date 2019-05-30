@@ -8,7 +8,7 @@ import static at.schiebung.stefan.schober0008.Vars.saved_file_double_upgrades_co
 import static at.schiebung.stefan.schober0008.Vars.saved_file_double_upgrades_cost_multi;
 import static at.schiebung.stefan.schober0008.Vars.saved_file_double_upgrades_count;
 
-public class Saves
+class Saves
 {
 	public static void loadSaves(Context context)
 	{
@@ -98,66 +98,66 @@ public class Saves
 		//1. Save-Datei
 		double[] d1 = new double[] {Vars.Clicks, Vars.ClickStep, Vars.ClickStepAuto};
 
-		String s1 = "";
+		StringBuilder s1 = new StringBuilder();
 
-		for (int i = 0; i < d1.length; i++)
+		for (double v : d1)
 		{
-			s1 += String.valueOf(d1[i] + ",");
+			s1.append(v).append(",");
 		}
 
 		//2. Save-Datei
 		boolean[] b2 = new boolean[] {Vars.bm};
 
-		String s2 = "";
+		StringBuilder s2 = new StringBuilder();
 
-		for (int i = 0; i < b2.length; i++)
+		for (boolean b : b2)
 		{
-			s2 += String.valueOf(b2[i] + ",");
+			s2.append(b).append(",");
 		}
 
 		//3. Save-Datei
 		double[] d3 = new double[Vars.UpgradeCost.length];
 
-		String s3 = "";
+		StringBuilder s3 = new StringBuilder();
 
 		for (int i = 0; i < d3.length; i++)
 		{
 			d3[i] = Vars.UpgradeCost[i];
-			s3 += String.valueOf(d3[i] + ",");
+			s3.append(d3[i]).append(",");
 		}
 
 		//4. Save-Datei
 		double[] d4 = new double[Vars.UpgradeCostMulti.length];
 
-		String s4 = "";
+		StringBuilder s4 = new StringBuilder();
 
 		for (int i = 0; i < d4.length; i++)
 		{
 			d4[i] = Vars.UpgradeCostMulti[i];
-			s4 += String.valueOf(d4[i] + ",");
+			s4.append(d4[i]).append(",");
 		}
 
 		//5. Save-Datei
 		double[] d5 = new double[Vars.UpgradeCount.length];
 
-		String s5 = "";
+		StringBuilder s5 = new StringBuilder();
 
 		for (int i = 0; i < d5.length; i++)
 		{
 			d5[i] = Vars.UpgradeCount[i];
-			s5 += String.valueOf(d5[i] + ",");
+			s5.append(d5[i]).append(",");
 		}
 
-		preferences.put(Vars.saved_file_double, s1);
-		preferences.put(Vars.saved_file_boolean, s2);
-		preferences.put(Vars.saved_file_double_upgrades_cost, s3);
-		preferences.put(Vars.saved_file_double_upgrades_cost_multi, s4);
-		preferences.put(Vars.saved_file_double_upgrades_count, s5);
+		preferences.put(Vars.saved_file_double, s1.toString());
+		preferences.put(Vars.saved_file_boolean, s2.toString());
+		preferences.put(Vars.saved_file_double_upgrades_cost, s3.toString());
+		preferences.put(Vars.saved_file_double_upgrades_cost_multi, s4.toString());
+		preferences.put(Vars.saved_file_double_upgrades_count, s5.toString());
 	}
 
-	public static void verify()
+	private static void verify()
 	{
-		double  tempCost          = 0;
+		double  tempCost;
 		double  tempClickStep     = Vars.dClickStep;
 		double  tempClickStepAuto = Vars.dClickStepAuto;
 		boolean verified          = true;

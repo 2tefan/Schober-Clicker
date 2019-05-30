@@ -1,54 +1,30 @@
 package at.schiebung.stefan.schober0008;
 
-import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
-import android.view.OrientationEventListener;
-
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
 import java.text.DecimalFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.crypto.spec.SecretKeySpec;
-
 /**
  * Created by Stefan on 22.05.2018.
  */
 
-public class Vars
+class Vars
 {
-	static String saved_file_double = "150";
-	static String saved_file_boolean = "149";
-	static String saved_file_double_upgrades_cost = "148";
-	static String saved_file_double_upgrades_improvement = "147";
-	static String saved_file_double_upgrades_cost_multi = "146";
-	static String saved_file_double_upgrades_count = "145";
+	static final String saved_file_double                     = "150";
+	static final String saved_file_boolean                    = "149";
+	static final String saved_file_double_upgrades_cost       = "148";
+	// --Commented out by Inspection (31.05.2019 01:01):static       String saved_file_double_upgrades_improvement = "147";
+	static final String saved_file_double_upgrades_cost_multi = "146";
+	static final String saved_file_double_upgrades_count      = "145";
 
-	static String preferences_name = "schober-preferences";
-	static String preferences_key = "thisistheworldbestquerschoberinmyschober";
-
-	static double dClicks = 0;
-	static double dClickStep = 0.1;
-	static double dClickStepAuto = 0;
-
-	static double Clicks = dClicks;
-	static double ClickStep = dClickStep;
-	static double ClickStepAuto = dClickStepAuto;
-
-	static int upgrades = 3;
-	static double[] UpgradeCost = new double[upgrades];
-	static double[] UpgradeCostMulti = new double[upgrades];
-	static double[] UpgradeImprovement = new double[upgrades];
-	static double[] UpgradeCount = new double[upgrades];
-
-	static double[] dUpgradeCost = new double[upgrades];
-	static double[] dUpgradeCostMulti = new double[upgrades];
-	static double[] dUpgradeImprovement = new double[upgrades];
-	static double[] dUpgradeCount = new double[upgrades];
-
-	static String[] sivorsilben = {"",
+	static final         String        preferences_name    = "schober-preferences";
+	static final         String        preferences_key     = "thisistheworldbestquerschoberinmyschober";
+	static final         double        dClickStep          = 0.1;
+	static final         double        dClickStepAuto      = 0;
+	static final         String[]      sivorsilben         = {"",
 			"Kilo",
 			"Mega",
 			"Giga",
@@ -71,6 +47,19 @@ public class Vars
 			"Tenanina",
 			"Bitena",
 			"Bitenakilo"};
+	static final         DecimalFormat schoberpersecound   = new DecimalFormat("+" + "0.##" + " SPS");
+	static final         boolean       soundclicks         = false;
+	static final         int           RC_SIGN_IN          = 10;
+	static final         int           RC_LEADERBOARD_UI   = 9004;
+	static final         int           RC_ACHIEVEMENT_UI   = 9003;
+	static final         int           pfeilRotateDuration = 700;
+	static final         int           popupDistance       = -4000;
+	static final         String        ppUrlSchober        = "https://sites.google.com/view/schober/privacy-policy";
+	final static         Handler       handler             = new Handler();
+	private static final double        dClicks             = 0;
+	private static final int           upgrades            = 3;
+	static final         double[]      UpgradeCost         = new double[upgrades];
+	static final         double[]      UpgradeCostMulti    = new double[upgrades];
 
 	public static void Werte()
 	{
@@ -102,34 +91,27 @@ public class Vars
 		ClickStep = dClickStep;
 		ClickStepAuto = dClickStepAuto;
 	}
-
-	static DecimalFormat decimalFormat = new DecimalFormat("0.##" + " " + Vars.sivorsilben[Vars.vorsilbe] + "Schober");
-	static DecimalFormat schoberpersecound = new DecimalFormat("+" + "0.##" + " SPS");
-
-	static boolean bm = true;
-
-	static MediaPlayer player;
-	static boolean soundclicks = false;
-	static int vorsilbe = 0;
-
-	static int RC_SIGN_IN = 10;
-	static final int RC_LEADERBOARD_UI = 9004;
-	static final int RC_ACHIEVEMENT_UI = 9003;
-	static Context main;
-
-	static Timer timer;
-	static TimerTask timerTaskAuto;
-	static TimerTask timerTaskChanges;
-	final static Handler handler = new Handler();
-
-	static int pfeilRotateDuration = 700;
-	static int popupDuration = 1000;
-	static int popupDistance = -4000;
-	static boolean popupVisble = false;
-	static boolean backpressed = false;
-	static boolean rotated = false;
+	static final         double[]      UpgradeImprovement  = new double[upgrades];
+	static final         double[]      UpgradeCount        = new double[upgrades];
+	static final         double[]      dUpgradeCost        = new double[upgrades];
+	static final         double[]      dUpgradeCostMulti   = new double[upgrades];
+	private static final double[]      dUpgradeImprovement = new double[upgrades];
+	private static final double[]      dUpgradeCount       = new double[upgrades];
+	static               double        Clicks              = dClicks;
+	static               double        ClickStep           = dClickStep;
+	static               double        ClickStepAuto       = dClickStepAuto;
+	// --Commented out by Inspection (31.05.2019 01:06):static       Context main;
+	static               boolean       bm                  = true;
+	static               Timer         timer;
+	static               TimerTask     timerTaskAuto;
+	static               TimerTask     timerTaskChanges;
+	static               MediaPlayer   player;
+	static               int           vorsilbe            = 0;
+	static               DecimalFormat decimalFormat       = new DecimalFormat("0.##" + " " + Vars.sivorsilben[Vars.vorsilbe] + "Schober");
+	static               int           popupDuration       = 1000;
+	static               boolean       popupVisble         = false;
+	static               boolean       backpressed         = false;
 
 	static boolean sivorsilbenoverflow = false;
-
-	static String ppUrlSchober = "https://sites.google.com/view/schober/privacy-policy";
+	static boolean rotated             = false;
 }

@@ -3,7 +3,7 @@ package at.schiebung.stefan.schober0008;
 import android.content.Context;
 import android.media.MediaPlayer;
 
-public class Sounds
+class Sounds
 {
     public static void MusicCreate(Context c)
     {

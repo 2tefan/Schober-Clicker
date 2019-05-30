@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="colorPrimary">#011f4b</color>
-    <color name="colorPrimaryDark">#03396c</color>
-    <color name="colorAccent">#40a2ff</color>
 
-	<color name="mainColor">#40a2ff</color>
+    <color name="mainColor">#40a2ff</color>
 	<color name="mainTextColor">#000000</color>
 
-    <color name="backgroundPrimary">#00005b96</color>
-	<color name="buttonPrimary">#6497b1</color>
-	<color name="buttonSecondary">#b3cde0</color>
-
-	<!--SchoberPfeil-->
+    <!--SchoberPfeil-->
 	<color name="schoberpfeil">#f6cd61</color>
 	<color name="schoberpfeiloutline">#fe8a71</color>
 
