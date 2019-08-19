@@ -3,8 +3,9 @@ package at.schiebung.stefan.schober0008;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * Created by Stefan on 22.05.2018.
