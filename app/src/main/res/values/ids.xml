@@ -7,12 +7,13 @@ Save this file as res/values/games-ids.xml in your project.
 	<!-- app_id -->
 	<string name="app_id" translatable="false">432912199591</string>
 	<!-- package_name -->
-    <!-- achievement 1 Scober -->
+	<string name="package_name" translatable="false">at.schiebung.stefan.schober0008</string>
+	<!-- achievement First Schober -->
 	<string name="achievement_first_schober" translatable="false">CgkIp9_P3MwMEAIQBA</string>
 	<!-- achievement Bimbo -->
 	<string name="achievement_bimbo" translatable="false">CgkIp9_P3MwMEAIQAw</string>
 	<!-- achievement KiloSchober -->
 	<string name="achievement_kiloschober" translatable="false">CgkIp9_P3MwMEAIQAQ</string>
-	<!-- pushStats Clicks -->
-	<string name="leaderboard_clicks" translatable="false">CgkIp9_P3MwMEAIQAg</string>
+	<!-- leaderboard Clicks -->
+	<string name="leaderboard_clicks" translatable="false">CgkIp9_P3MwMEAIQBg</string>
 </resources>
