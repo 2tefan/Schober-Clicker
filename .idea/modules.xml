@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Schober-Clicker.iml" filepath="$PROJECT_DIR$/Schober-Clicker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Schober-Clicker.iml" filepath="$PROJECT_DIR$/.idea/modules/Schober-Clicker.iml" group="Schober-Clicker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Schober-Clicker/app" />
     </modules>
   </component>
 </project>
